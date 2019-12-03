@@ -5,9 +5,9 @@ import * as faker from "faker";
 import emailSvg from "./email.svg";
 import locationSvg from "./location.svg";
 
-const positionFake = () => ({
+const experienceFake = () => ({
   company: faker.company.companyName(),
-  position: faker.name.jobTitle(),
+  jobTitle: faker.name.jobTitle(),
   duties: [faker.lorem.sentence(), faker.lorem.sentence()]
 });
 
@@ -17,47 +17,62 @@ const content = {
     lastName: faker.name.lastName(),
     city: faker.address.city(),
     email: faker.internet.email(),
-    position: faker.name.jobTitle()
+    experience: faker.name.jobTitle()
   },
-  summary: {},
+  summary: faker.lorem.paragraph(),
   skills: {},
-  positions: [
-    positionFake(),
-    positionFake(),
-    positionFake(),
-    positionFake()
+  experiences: [
+    experienceFake(),
+    experienceFake(),
+    experienceFake(),
+    experienceFake()
   ]
 };
-const Position = ({ position }) => (
-  <div
+console.log(faker);
+const Summary = ({ summary }) => (
+  <section
     css={css`
-      border: 1px dotted red;
       padding: 1rem 0;
     `}
   >
-    {JSON.stringify(position)}
+    <h3>Summary</h3>
+    {JSON.stringify(summary)}
+  </section>
+);
+
+const Experience = ({ experience }) => (
+  <div
+    css={css`
+      padding: 1rem 0;
+    `}
+  >
+    <h4>{experience.jobTitle}</h4>
+    <h5>{experience.company}</h5>
+    <ul>
+      {experience.duties.map((duty, key) => (
+        <li key={key}>{duty}</li>
+      ))}
+    </ul>
   </div>
 );
-const Positions = ({ positions }) => (
-  <div>
-    <h3>Career</h3>
+const Experiences = ({ experiences }) => (
+  <section>
+    <h3>Experiences</h3>
     <div>
-      {positions.map((position, key) => (
-        <Position position={position} key={key} />
+      {experiences.map((experience, key) => (
+        <Experience experience={experience} key={key} />
       ))}
     </div>
-  </div>
+  </section>
 );
 
 const BasicInfo = ({ info }) => (
-  <div
+  <section
     css={css`
-      border: 1px dotted red;
     `}
   >
     <div
       css={css`
-        border: 1px dotted red;
         display: flex;
         justify-content: space-between;
         align-content: flex-start;
@@ -71,20 +86,15 @@ const BasicInfo = ({ info }) => (
           }
         `}
       >
-        <div
-          css={css`
-            font-size: 2rem;
-            font-weight: bold;
-          `}
-        >
+        <h1>
           {info.firstName} {info.lastName}
-        </div>
+        </h1>
         <div
           css={css`
-            font-size: 1.5rem;
+            font-size: 1.3rem;
           `}
         >
-          {info.position}
+          {info.experience}
         </div>
       </div>
       <div
@@ -108,25 +118,43 @@ const BasicInfo = ({ info }) => (
         </div>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 function App() {
   return (
-    <div
+    <main
       css={css`
         background: white;
         height: 100vh;
         font-size: 18px;
         box-sizing: border-box;
         padding: 1rem;
+        * {
+          margin: 0;
+          padding: 0;
+        }
+        h1,
+        h2,
+        h3 {
+          padding-bottom: 0.5rem;
+          color: darkblue;
+          text-transform: uppercase;
+        }
+        h4,
+        h5 {
+          padding-bottom: 0.5rem;
+        }
+        ul {
+          padding: 0.5rem 2rem;
+        }
       `}
     >
       <BasicInfo info={content.basicInfo} />
-      <Positions positions={content.positions} />
-      <main></main>
+      <Summary summary={content.summary} />
+      <Experiences experiences={content.experiences} />
       {/*JSON.stringify(content, null, 4)*/}
-    </div>
+    </main>
   );
 }
 
