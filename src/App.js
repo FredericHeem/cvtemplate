@@ -20,7 +20,33 @@ const content = {
     experience: faker.name.jobTitle()
   },
   summary: faker.lorem.paragraph(),
-  skills: {},
+  skills: [
+    {
+      category: "Frontend",
+      items: [{ name: "React" }, { name: "CSS" }, { name: "D3" }]
+    },
+    {
+      category: "Backend",
+      items: [
+        { name: "Node" },
+        { name: "Kotlin" },
+        { name: "C++" },
+        { name: "Java" }
+      ]
+    },
+    {
+      category: "Methodologies",
+      items: [{ name: "Agile" }, { name: "Lean" }, { name: "Scrum" }]
+    },
+    {
+      category: "Databases",
+      items: [{ name: "Postgres" }, { name: "Oracle" }, { name: "Mysql" }]
+    },
+    {
+      category: "DevOps",
+      items: [{ name: "Docker" }, { name: "Ansible" }, { name: "Chef" }]
+    }
+  ],
   experiences: [
     experienceFake(),
     experienceFake(),
@@ -37,6 +63,33 @@ const Summary = ({ summary }) => (
   >
     <h3>Summary</h3>
     {JSON.stringify(summary)}
+  </section>
+);
+const SkillSection = ({ skill = {} }) => (
+  <tr>
+    <th>{skill.category}</th>
+    <td>{skill.items.map(item => item.name).join(", ")}</td>
+  </tr>
+);
+
+const Skills = ({ skills = [] }) => (
+  <section>
+    <h3>Skills</h3>
+    <table
+      css={css`
+        th {
+          text-align: left;
+          color: gray;
+          padding: 0.3rem 0.3rem 0.3rem 0;
+        }
+      `}
+    >
+      <tbody>
+        {skills.map((skill, key) => (
+          <SkillSection key={key} skill={skill} />
+        ))}
+      </tbody>
+    </table>
   </section>
 );
 
@@ -67,10 +120,7 @@ const Experiences = ({ experiences }) => (
 );
 
 const BasicInfo = ({ info }) => (
-  <section
-    css={css`
-    `}
-  >
+  <section css={css``}>
     <div
       css={css`
         display: flex;
@@ -134,6 +184,10 @@ function App() {
           margin: 0;
           padding: 0;
         }
+        section {
+          padding:1rem 0 1rem 0;
+          border-bottom: 2px solid lightgray;
+        }
         h1,
         h2,
         h3 {
@@ -151,7 +205,8 @@ function App() {
       `}
     >
       <BasicInfo info={content.basicInfo} />
-      <Summary summary={content.summary} />
+      <Skills skills={content.skills} />
+      <Summary skills={content.summary} />
       <Experiences experiences={content.experiences} />
       {/*JSON.stringify(content, null, 4)*/}
     </main>
