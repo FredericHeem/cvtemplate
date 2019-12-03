@@ -96,7 +96,7 @@ const Skills = ({ skills = [] }) => (
 const Experience = ({ experience }) => (
   <div
     css={css`
-      padding: 1rem 0;
+      padding: 0.5rem 0;
     `}
   >
     <h4>{experience.jobTitle}</h4>
@@ -185,22 +185,22 @@ function App() {
           padding: 0;
         }
         section {
-          padding:1rem 0 1rem 0;
+          padding:0.3rem 0 0.5rem 0;
           border-bottom: 2px solid lightgray;
         }
         h1,
         h2,
         h3 {
-          padding-bottom: 0.5rem;
+          padding-bottom: 0.3rem;
           color: darkblue;
           text-transform: uppercase;
         }
         h4,
         h5 {
-          padding-bottom: 0.5rem;
+          padding-bottom: 0.3rem;
         }
         ul {
-          padding: 0.5rem 2rem;
+          padding: 0.2rem 2rem;
         }
       `}
     >
