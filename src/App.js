@@ -234,6 +234,8 @@ function App() {
         font-size: 18px;
         box-sizing: border-box;
         padding: 1rem;
+        max-width: 800px;
+        margin:auto;
         * {
           margin: 0;
           padding: 0;
