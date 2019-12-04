@@ -20,6 +20,11 @@ const content = {
     experience: faker.name.jobTitle()
   },
   summary: faker.lorem.paragraph(),
+  languages: [
+    { name: "English", level: "Fluent" },
+    { name: "German", level: "Conversional" },
+    { name: "Venetian", level: "Fluent" }
+  ],
   educations: [
     {
       name: "Master of Science",
@@ -87,6 +92,39 @@ const SkillSection = ({ skill = {} }) => (
   </tr>
 );
 
+const Languages = ({ languages = [] }) => (
+  <section>
+    <h3>Languages</h3>
+    <table
+      css={css`
+        th {
+          text-align: left;
+          color: gray;
+          padding: 0.3rem 2rem 0.3rem 0;
+        }
+        td {
+          padding: 0.3rem 1rem 0.3rem 0;
+        }
+      `}
+    >
+      <thead>
+        <tr>
+          {languages.map((language, key) => (
+            <th key={key}>{language.name}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          {languages.map((language, key) => (
+            <td key={key}>{language.level}</td>
+          ))}
+        </tr>
+      </tbody>
+    </table>
+  </section>
+);
+
 const Skills = ({ skills = [] }) => (
   <section>
     <h3>Skills</h3>
@@ -96,7 +134,9 @@ const Skills = ({ skills = [] }) => (
           text-align: left;
           color: gray;
           padding: 0.3rem 0.3rem 0.3rem 0;
+          margin:1rem;
         }
+        
       `}
     >
       <tbody>
@@ -235,14 +275,14 @@ function App() {
         box-sizing: border-box;
         padding: 1rem;
         max-width: 800px;
-        margin:auto;
+        margin: auto;
         * {
           margin: 0;
           padding: 0;
         }
         section {
           padding: 0.3rem 0 0.5rem 0;
-          border-bottom: 2px solid lightgray;
+          border-bottom: 1px dashed lightgray;
         }
         h1,
         h2,
@@ -261,6 +301,7 @@ function App() {
       `}
     >
       <BasicInfo info={content.basicInfo} />
+      <Languages languages={content.languages} />
       <Summary summary={content.summary} />
       <Skills skills={content.skills} />
       <Experiences experiences={content.experiences} />
