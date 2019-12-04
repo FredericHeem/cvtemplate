@@ -303,6 +303,7 @@ function App() {
         font-size: 18px;
         box-sizing: border-box;
         max-width: 800px;
+        padding: 0 1rem 0 1rem;
         margin: auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
