@@ -71,6 +71,7 @@ console.log(faker);
 const Summary = ({ summary }) => (
   <section
     css={css`
+      grid-area: su;
       padding: 1rem 0;
     `}
   >
@@ -93,7 +94,11 @@ const SkillSection = ({ skill = {} }) => (
 );
 
 const Languages = ({ languages = [] }) => (
-  <section>
+  <section
+    css={css`
+      grid-area: la;
+    `}
+  >
     <h3>Languages</h3>
     <table
       css={css`
@@ -126,7 +131,11 @@ const Languages = ({ languages = [] }) => (
 );
 
 const Skills = ({ skills = [] }) => (
-  <section>
+  <section
+    css={css`
+      grid-area: sk;
+    `}
+  >
     <h3>Skills</h3>
     <table
       css={css`
@@ -134,9 +143,8 @@ const Skills = ({ skills = [] }) => (
           text-align: left;
           color: gray;
           padding: 0.3rem 0.3rem 0.3rem 0;
-          margin:1rem;
+          margin: 1rem;
         }
-        
       `}
     >
       <tbody>
@@ -164,7 +172,11 @@ const Experience = ({ experience }) => (
   </div>
 );
 const Experiences = ({ experiences }) => (
-  <section>
+  <section
+    css={css`
+      grid-area: ex;
+    `}
+  >
     <h3>Experiences</h3>
     <div>
       {experiences.map((experience, key) => (
@@ -180,7 +192,16 @@ const Education = ({ education }) => (
       padding: 0.5rem 0;
     `}
   >
-    <h4>{education.name}</h4>
+    <div
+      css={css`
+        color: gray;
+        font-weight:bold;
+        font-size: 1.2rem;
+        padding-bottom:0.5rem;
+      `}
+    >
+      {education.name}
+    </div>
     <div
       css={css`
         display: flex;
@@ -203,7 +224,11 @@ const Education = ({ education }) => (
 );
 
 const Educations = ({ educations = [] }) => (
-  <section>
+  <section
+    css={css`
+      grid-area: ed;
+    `}
+  >
     <h3>Educations</h3>
     <div>
       {educations.map((education, key) => (
@@ -214,7 +239,11 @@ const Educations = ({ educations = [] }) => (
 );
 
 const BasicInfo = ({ info }) => (
-  <section css={css``}>
+  <section
+    css={css`
+      grid-area: in;
+    `}
+  >
     <div
       css={css`
         display: flex;
@@ -273,15 +302,24 @@ function App() {
         height: 100vh;
         font-size: 18px;
         box-sizing: border-box;
-        padding: 1rem;
         max-width: 800px;
         margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(min-content, max-content);
+        grid-template-areas:
+          "in in"
+          "su su"
+          "sk sk"
+          "ex ex"
+          "ed la";
+
         * {
           margin: 0;
           padding: 0;
         }
         section {
-          padding: 0.3rem 0 0.5rem 0;
+          padding: 1rem 0 1rem 0;
           border-bottom: 1px dashed lightgray;
         }
         h1,
