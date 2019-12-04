@@ -20,6 +20,14 @@ const content = {
     experience: faker.name.jobTitle()
   },
   summary: faker.lorem.paragraph(),
+  educations: [
+    {
+      name: "Master of Science",
+      description: faker.lorem.word(),
+      issuer: faker.lorem.word(),
+      endYear: "2010"
+    }
+  ],
   skills: [
     {
       category: "Frontend",
@@ -62,11 +70,18 @@ const Summary = ({ summary }) => (
     `}
   >
     <h3>Summary</h3>
-    {JSON.stringify(summary)}
+    {summary}
   </section>
 );
+
 const SkillSection = ({ skill = {} }) => (
-  <tr>
+  <tr
+    css={css`
+      td {
+        font-weight: 500;
+      }
+    `}
+  >
     <th>{skill.category}</th>
     <td>{skill.items.map(item => item.name).join(", ")}</td>
   </tr>
@@ -114,6 +129,45 @@ const Experiences = ({ experiences }) => (
     <div>
       {experiences.map((experience, key) => (
         <Experience experience={experience} key={key} />
+      ))}
+    </div>
+  </section>
+);
+
+const Education = ({ education }) => (
+  <div
+    css={css`
+      padding: 0.5rem 0;
+    `}
+  >
+    <h4>{education.name}</h4>
+    <div
+      css={css`
+        display: flex;
+        > div {
+          padding-right: 0.5rem;
+        }
+        font-size: 1.2rem;
+      `}
+    >
+      <div>{education.issuer}</div>
+      <div
+        css={css`
+          font-weight: 300;
+        `}
+      >
+        {education.endYear}
+      </div>
+    </div>
+  </div>
+);
+
+const Educations = ({ educations = [] }) => (
+  <section>
+    <h3>Educations</h3>
+    <div>
+      {educations.map((education, key) => (
+        <Education education={education} key={key} />
       ))}
     </div>
   </section>
@@ -185,7 +239,7 @@ function App() {
           padding: 0;
         }
         section {
-          padding:0.3rem 0 0.5rem 0;
+          padding: 0.3rem 0 0.5rem 0;
           border-bottom: 2px solid lightgray;
         }
         h1,
@@ -205,9 +259,10 @@ function App() {
       `}
     >
       <BasicInfo info={content.basicInfo} />
+      <Summary summary={content.summary} />
       <Skills skills={content.skills} />
-      <Summary skills={content.summary} />
       <Experiences experiences={content.experiences} />
+      <Educations educations={content.educations} />
       {/*JSON.stringify(content, null, 4)*/}
     </main>
   );
