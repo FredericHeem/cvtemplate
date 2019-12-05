@@ -362,6 +362,13 @@ function App() {
         ul {
           padding: 0.2rem 2rem;
         }
+
+        h1 {
+          font-size: 2em;
+        }
+        p {
+          line-height: 1.6rem;
+        }
       `}
     >
       <BasicInfo info={content.basicInfo} />
