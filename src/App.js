@@ -8,7 +8,11 @@ import locationSvg from "./location.svg";
 const experienceFake = () => ({
   company: faker.company.companyName(),
   jobTitle: faker.name.jobTitle(),
-  duties: [faker.lorem.sentence(), faker.lorem.sentence()]
+  duties: [faker.lorem.sentence(), faker.lorem.sentence()],
+  date: {
+    start: "02/2019",
+    end: "10/2019"
+  }
 });
 
 const content = {
@@ -76,7 +80,7 @@ const Summary = ({ summary }) => (
     `}
   >
     <h3>Summary</h3>
-    {summary}
+    <p>{summary}</p>
   </section>
 );
 
@@ -163,7 +167,23 @@ const Experience = ({ experience }) => (
     `}
   >
     <h4>{experience.jobTitle}</h4>
-    <h5>{experience.company}</h5>
+    <div
+      css={css`
+        display: flex;
+        justify-content: space-between;
+      `}
+    >
+      <h5>{experience.company}</h5>
+      <span
+        css={css`
+          color: grey;
+          font-weight: 400;
+          font-size: 0.83em;
+        `}
+      >
+        {experience.date.start} - {experience.date.end}
+      </span>
+    </div>
     <ul>
       {experience.duties.map((duty, key) => (
         <li key={key}>{duty}</li>
@@ -195,9 +215,9 @@ const Education = ({ education }) => (
     <div
       css={css`
         color: gray;
-        font-weight:bold;
+        font-weight: bold;
         font-size: 1.2rem;
-        padding-bottom:0.5rem;
+        padding-bottom: 0.5rem;
       `}
     >
       {education.name}
@@ -242,53 +262,49 @@ const BasicInfo = ({ info }) => (
   <section
     css={css`
       grid-area: in;
+      display: flex;
+      justify-content: space-between;
+      align-content: flex-start;
+      align-items: flex-start;
+      margin-right: 0.5rem;
     `}
   >
     <div
       css={css`
-        display: flex;
-        justify-content: space-between;
-        align-content: flex-start;
-        align-items: flex-start;
+        > div {
+          padding: 0.5rem 0;
+        }
       `}
     >
+      <h1>
+        {info.firstName} {info.lastName}
+      </h1>
       <div
         css={css`
-          > div {
-            padding: 0.5rem 0;
-          }
+          font-size: 1.3rem;
         `}
       >
-        <h1>
-          {info.firstName} {info.lastName}
-        </h1>
-        <div
-          css={css`
-            font-size: 1.3rem;
-          `}
-        >
-          {info.experience}
-        </div>
+        {info.experience}
       </div>
-      <div
-        css={css`
-          > div {
-            display: flex;
-            align-items: center;
-            img {
-              padding: 0.6rem;
-            }
+    </div>
+    <div
+      css={css`
+        > div {
+          display: flex;
+          align-items: center;
+          img {
+            padding: 0.6rem;
           }
-        `}
-      >
-        <div>
-          <img alt="email" src={emailSvg} width="20" />
-          <span>{info.email}</span>
-        </div>
-        <div>
-          <img alt="location" src={locationSvg} width="20" />
-          <span>{info.city}</span>
-        </div>
+        }
+      `}
+    >
+      <div>
+        <img alt="email" src={emailSvg} width="20" />
+        <span>{info.email}</span>
+      </div>
+      <div>
+        <img alt="location" src={locationSvg} width="20" />
+        <span>{info.city}</span>
       </div>
     </div>
   </section>
@@ -299,11 +315,11 @@ function App() {
     <main
       css={css`
         background: white;
-        height: 100vh;
+        height: 100%;
         font-size: 18px;
         box-sizing: border-box;
         max-width: 800px;
-        padding: 0 1rem 0 1rem;
+        padding: 0 2rem 0 1rem;
         margin: auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -314,7 +330,16 @@ function App() {
           "sk sk"
           "ex ex"
           "ed la";
-
+        @media (max-width: 420px) {
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-areas:
+            "in"
+            "su"
+            "sk"
+            "ex"
+            "ed"
+            "la";
+        }
         * {
           margin: 0;
           padding: 0;
