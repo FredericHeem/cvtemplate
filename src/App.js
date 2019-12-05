@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import "./App.css";
 import * as faker from "faker";
 import { ReactComponent as EmailSvg } from "./email.svg";
 import { ReactComponent as LocationSvg } from "./location.svg";
@@ -360,11 +359,7 @@ function App() {
             "ed"
             "la";
         }
-        * {
-          margin: 0;
-          padding: 0;
-          font-family: "PT Sans", sans-serif;
-        }
+        
         section {
           padding: 1rem 0 1rem 0;
           border-bottom: 1px dashed lightgray;
