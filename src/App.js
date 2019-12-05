@@ -269,11 +269,11 @@ const BasicInfo = ({ info }) => (
       flex-wrap: wrap;
       justify-content: space-between;
       align-content: flex-start;
-      align-items: flex-start;
+      align-items: center;
       margin-right: 0.5rem;
       img {
         border-radius: 50%;
-        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
       }
     `}
   >
