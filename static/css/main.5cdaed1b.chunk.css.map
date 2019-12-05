@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,EACE,8BAAkC,CAClC,QAAS,CACT,SAAU,CACV,kCAAmC,CACnC,iCACF","file":"main.5cdaed1b.chunk.css","sourcesContent":["* {\n  font-family: \"PT Sans\", sans-serif;\n  margin: 0;\n  padding: 0;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n"]}
