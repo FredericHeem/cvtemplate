@@ -272,8 +272,7 @@ const BasicInfo = ({ info }) => (
       align-items: center;
       margin-right: 0.5rem;
       img {
-        border-radius: 50%;
-        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
       }
     `}
   >
