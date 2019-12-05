@@ -4,6 +4,7 @@ import "./App.css";
 import * as faker from "faker";
 import { ReactComponent as EmailSvg } from "./email.svg";
 import { ReactComponent as LocationSvg } from "./location.svg";
+import { ReactComponent as GithubSvg } from "./github.svg";
 
 const experienceFake = () => ({
   company: faker.company.companyName(),
@@ -22,12 +23,13 @@ const content = {
     lastName: faker.name.lastName(),
     city: faker.address.city(),
     email: faker.internet.email(),
-    jobTitle: faker.name.jobTitle()
+    jobTitle: faker.name.jobTitle(),
+    github: "github.com/fredericheem"
   },
   summary: faker.lorem.paragraph(),
   languages: [
     { name: "English", level: "Fluent" },
-    { name: "German", level: "Conversional" },
+    { name: "German", level: "Conversational" },
     { name: "Venetian", level: "Fluent" }
   ],
   educations: [
@@ -318,6 +320,12 @@ const BasicInfo = ({ info }) => (
         <LocationSvg width="20" />
         <span>{info.city}</span>
       </div>
+      {info.github && (
+        <div>
+          <GithubSvg height="20" width="20" />
+          <a href={`https://${info.github}`}>{info.github}</a>
+        </div>
+      )}
     </div>
   </section>
 );
