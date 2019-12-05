@@ -21,7 +21,7 @@ const content = {
     lastName: faker.name.lastName(),
     city: faker.address.city(),
     email: faker.internet.email(),
-    experience: faker.name.jobTitle()
+    jobTitle: faker.name.jobTitle()
   },
   summary: faker.lorem.paragraph(),
   languages: [
@@ -264,6 +264,7 @@ const BasicInfo = ({ info }) => (
     css={css`
       grid-area: in;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-content: flex-start;
       align-items: flex-start;
@@ -285,7 +286,7 @@ const BasicInfo = ({ info }) => (
           font-size: 1.3rem;
         `}
       >
-        {info.experience}
+        {info.jobTitle}
       </div>
     </div>
     <div
@@ -295,7 +296,7 @@ const BasicInfo = ({ info }) => (
           align-items: center;
           font-size: 0.9rem;
           svg {
-            padding: 0.6rem;
+            padding: 0.6rem 0.6rem 0.6rem 0;
             fill: grey;
           }
           color: grey;
