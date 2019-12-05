@@ -93,7 +93,7 @@ const SkillSection = ({ skill = {} }) => (
     `}
   >
     <th>{skill.category}</th>
-    <td>{skill.items.map(item => item.name).join(", ")}</td>
+    <td>{skill.items.map(item => item.name).join(" ◦ ")}</td>
   </tr>
 );
 
@@ -110,6 +110,7 @@ const Languages = ({ languages = [] }) => (
           text-align: left;
           color: gray;
           padding: 0.3rem 2rem 0.3rem 0;
+          
         }
         td {
           padding: 0.3rem 1rem 0.3rem 0;
@@ -148,6 +149,7 @@ const Skills = ({ skills = [] }) => (
           color: gray;
           padding: 0.3rem 0.3rem 0.3rem 0;
           margin: 1rem;
+          font-weight: 500;
         }
       `}
     >
