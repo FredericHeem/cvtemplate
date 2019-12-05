@@ -2,8 +2,8 @@
 import { jsx, css } from "@emotion/core";
 import "./App.css";
 import * as faker from "faker";
-import emailSvg from "./email.svg";
-import locationSvg from "./location.svg";
+import { ReactComponent as EmailSvg } from "./email.svg";
+import { ReactComponent as LocationSvg } from "./location.svg";
 
 const experienceFake = () => ({
   company: faker.company.companyName(),
@@ -110,7 +110,6 @@ const Languages = ({ languages = [] }) => (
           text-align: left;
           color: gray;
           padding: 0.3rem 2rem 0.3rem 0;
-          
         }
         td {
           padding: 0.3rem 1rem 0.3rem 0;
@@ -294,18 +293,21 @@ const BasicInfo = ({ info }) => (
         > div {
           display: flex;
           align-items: center;
-          img {
+          font-size: 0.9rem;
+          svg {
             padding: 0.6rem;
+            fill: grey;
           }
+          color: grey;
         }
       `}
     >
       <div>
-        <img alt="email" src={emailSvg} width="20" />
+        <EmailSvg width="20" />
         <span>{info.email}</span>
       </div>
       <div>
-        <img alt="location" src={locationSvg} width="20" />
+        <LocationSvg width="20" />
         <span>{info.city}</span>
       </div>
     </div>
@@ -345,6 +347,7 @@ function App() {
         * {
           margin: 0;
           padding: 0;
+          font-family: "PT Sans", sans-serif;
         }
         section {
           padding: 1rem 0 1rem 0;
@@ -366,7 +369,7 @@ function App() {
         }
 
         h1 {
-          font-size: 2em;
+          font-size: 1.75em;
         }
         p {
           line-height: 1.6rem;
