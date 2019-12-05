@@ -17,6 +17,7 @@ const experienceFake = () => ({
 
 const content = {
   basicInfo: {
+    photo: faker.image.avatar(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     city: faker.address.city(),
@@ -223,6 +224,7 @@ const Education = ({ education }) => (
     >
       {education.name}
     </div>
+
     <div
       css={css`
         display: flex;
@@ -269,6 +271,10 @@ const BasicInfo = ({ info }) => (
       align-content: flex-start;
       align-items: flex-start;
       margin-right: 0.5rem;
+      img {
+        border-radius: 50%;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+      }
     `}
   >
     <div
@@ -289,6 +295,8 @@ const BasicInfo = ({ info }) => (
         {info.jobTitle}
       </div>
     </div>
+
+    {info.photo && <img width="100" src={info.photo} alt="selfie" />}
     <div
       css={css`
         > div {
