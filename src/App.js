@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import * as faker from "faker";
-import { ReactComponent as EmailSvg } from "./email.svg";
-import { ReactComponent as LocationSvg } from "./location.svg";
-import { ReactComponent as GithubSvg } from "./github.svg";
+import { ReactComponent as EmailSvg } from "./img/email.svg";
+import { ReactComponent as LocationSvg } from "./img/location.svg";
+import { ReactComponent as GithubSvg } from "./img/github.svg";
 
 const experienceFake = () => ({
   company: faker.company.companyName(),
