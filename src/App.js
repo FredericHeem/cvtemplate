@@ -274,6 +274,7 @@ const BasicInfo = ({ info }) => (
       margin-right: 0.5rem;
       img {
         clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+        filter: grayscale(100%);
       }
     `}
   >
@@ -296,7 +297,7 @@ const BasicInfo = ({ info }) => (
       </div>
     </div>
 
-    {info.photo && <img width="100" src={info.photo} alt="selfie" />}
+    
     <div
       css={css`
         > div {
@@ -306,6 +307,9 @@ const BasicInfo = ({ info }) => (
           svg {
             padding: 0.6rem 0.6rem 0.6rem 0;
             fill: grey;
+          }
+          a {
+            color: grey
           }
           color: grey;
         }
@@ -326,6 +330,7 @@ const BasicInfo = ({ info }) => (
         </div>
       )}
     </div>
+    {info.photo && <img width="100" src={info.photo} alt="selfie" />}
   </section>
 );
 
