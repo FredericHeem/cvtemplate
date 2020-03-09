@@ -1,79 +1,11 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import * as faker from "faker";
 import { ReactComponent as EmailSvg } from "./img/email.svg";
 import { ReactComponent as LocationSvg } from "./img/location.svg";
 import { ReactComponent as GithubSvg } from "./img/github.svg";
 
-const experienceFake = () => ({
-  company: faker.company.companyName(),
-  jobTitle: faker.name.jobTitle(),
-  duties: [faker.lorem.sentence(), faker.lorem.sentence()],
-  date: {
-    start: "02/2019",
-    end: "10/2019"
-  }
-});
+import content from "./content"
 
-const content = {
-  basicInfo: {
-    photo: faker.image.avatar(),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
-    city: faker.address.city(),
-    email: faker.internet.email(),
-    jobTitle: faker.name.jobTitle(),
-    github: "github.com/fredericheem"
-  },
-  summary: faker.lorem.paragraph(),
-  languages: [
-    { name: "English", level: "Fluent" },
-    { name: "German", level: "Conversational" },
-    { name: "Venetian", level: "Fluent" }
-  ],
-  educations: [
-    {
-      name: "Master of Science",
-      description: faker.lorem.word(),
-      issuer: faker.lorem.word(),
-      endYear: "2010"
-    }
-  ],
-  skills: [
-    {
-      category: "Frontend",
-      items: [{ name: "React" }, { name: "CSS" }, { name: "D3" }]
-    },
-    {
-      category: "Backend",
-      items: [
-        { name: "Node" },
-        { name: "Kotlin" },
-        { name: "C++" },
-        { name: "Java" }
-      ]
-    },
-    {
-      category: "Methodologies",
-      items: [{ name: "Agile" }, { name: "Lean" }, { name: "Scrum" }]
-    },
-    {
-      category: "Databases",
-      items: [{ name: "Postgres" }, { name: "Oracle" }, { name: "Mysql" }]
-    },
-    {
-      category: "DevOps",
-      items: [{ name: "Docker" }, { name: "Ansible" }, { name: "Chef" }]
-    }
-  ],
-  experiences: [
-    experienceFake(),
-    experienceFake(),
-    experienceFake(),
-    experienceFake()
-  ]
-};
-console.log(faker);
 const Summary = ({ summary }) => (
   <section
     css={css`
