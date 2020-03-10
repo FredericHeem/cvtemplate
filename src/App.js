@@ -4,7 +4,7 @@ import { ReactComponent as EmailSvg } from "./img/email.svg";
 import { ReactComponent as LocationSvg } from "./img/location.svg";
 import { ReactComponent as GithubSvg } from "./img/github.svg";
 
-import content from "./content"
+import content from "./content";
 
 const Summary = ({ summary }) => (
   <section
@@ -98,7 +98,7 @@ const Skills = ({ skills = [] }) => (
 const Experience = ({ experience }) => (
   <div
     css={css`
-      padding: 0.5rem 0;
+      padding: 0.2rem 0;
     `}
   >
     <h4>{experience.jobTitle}</h4>
@@ -122,6 +122,25 @@ const Experience = ({ experience }) => (
     <ul>
       {experience.duties.map((duty, key) => (
         <li key={key}>{duty}</li>
+      ))}
+    </ul>
+    <ul
+      css={css`
+        list-style: none;
+        li {
+          color: grey;
+          font-weight: 400;
+          font-size: 0.9em;
+          display: inline-block;
+          margin: 0 1rem 0.3rem 0;
+          padding: 0.3rem;
+          border-radius: 4px;
+          border: 1px solid grey;
+        }
+      `}
+    >
+      {experience.tags.map((tag, key) => (
+        <li key={key}>{tag}</li>
       ))}
     </ul>
   </div>
@@ -229,7 +248,6 @@ const BasicInfo = ({ info }) => (
       </div>
     </div>
 
-    
     <div
       css={css`
         > div {
@@ -241,7 +259,7 @@ const BasicInfo = ({ info }) => (
             fill: grey;
           }
           a {
-            color: grey
+            color: grey;
           }
           color: grey;
         }
@@ -296,7 +314,7 @@ function App() {
             "ed"
             "la";
         }
-        
+
         section {
           padding: 1rem 0 1rem 0;
           border-bottom: 1px dashed lightgray;
