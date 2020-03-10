@@ -24,7 +24,7 @@ const experiences = () => [
       "Continuously improve processes and practices of the software development lifecycle: testing, linting, continuous integration and deployment.",
       "Provide technical guidance, support and coaching to engineers."
     ],
-    tags: ["Node", "Graphql", "Postgres", "React", "C++"],
+    tags: ["Node", "Graphql", "Postgres", "React", "Docker", "C++"],
     date: {
       start: "06/2018",
       end: "03/2019"
@@ -40,11 +40,10 @@ const experiences = () => [
       "Write reusable components and libraries.",
       "Internationalisation, PDF report generation, D3 chart.",
       "End to end testing.",
-      "React, Redux, ES6, Webpack, Mocha, Nightwatch, Java Spring Boot.",
       "Design and build a Proof Of Concept of a multi-asset trading and settlement platform based on the Stellar protocol: React, Node, SQL, C++",
       "Prototyping a mobile retail trading application with Ionic/Cordova/Angular."
     ],
-    tags: ["React", "Node", "Java"],
+    tags: ["React", "Redux", "Node", "Java"],
     date: {
       start: "11/2015",
       end: "06/2018"
@@ -123,7 +122,7 @@ const experiences = () => [
       "Design, implementation and validation of an embedded TCP/IP stack used in ADSL and fibre routers.",
       "Create penetration testing tools to harden security."
     ],
-    tags: ["C", "Networking Stack", "Device Driver"],
+    tags: ["C", "Networking Stack", "Device Driver", "Voice over IP"],
     date: {
       start: "11/2000",
       end: "11/2002"
@@ -159,7 +158,7 @@ const content = {
   skills: [
     {
       category: "Frontend",
-      items: [{ name: "React" }, { name: "CSS" }, { name: "D3" }]
+      items: [{ name: "React" }, { name: "CSS" }, { name: "Typescript" }, { name: "D3" }]
     },
     {
       category: "Backend",
