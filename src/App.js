@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import { ReactComponent as EmailSvg } from "./img/email.svg";
 import { ReactComponent as LocationSvg } from "./img/location.svg";
 import { ReactComponent as GithubSvg } from "./img/github.svg";
@@ -27,7 +27,7 @@ const SkillSection = ({ skill = {} }) => (
     `}
   >
     <th>{skill.category}</th>
-    <td>{skill.items.map(item => item.name).join(" ◦ ")}</td>
+    <td>{skill.items.map((item) => item.name).join(" ◦ ")}</td>
   </tr>
 );
 
@@ -247,7 +247,6 @@ const BasicInfo = ({ info }) => (
         {info.jobTitle}
       </div>
     </div>
-
     <div
       css={css`
         > div {
@@ -280,7 +279,7 @@ const BasicInfo = ({ info }) => (
         </div>
       )}
     </div>
-    {info.photo && <img width="100" src={info.photo} alt="selfie" />}
+    <img width="100" src={`${process.env.PUBLIC_URL}/me.jpeg`} alt="selfie" />
   </section>
 );
 
