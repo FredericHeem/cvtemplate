@@ -3,17 +3,29 @@ import * as photo from "./me.jpeg";
 
 const experiences = () => [
   {
+    company: "GruCloud",
+    jobTitle: "Founder",
+    duties: [
+      "GruCloud is an infrastruture as code tool, alternative to Terraform/CDK, featuring code generation from live infrastruture.",
+    ],
+    tags: ["Javascript", "Typescript", "AWS", "Azure", "Google Cloud"],
+    date: {
+      start: "04/2020",
+      end: "now",
+    },
+  },
+  {
     company: "HCL Labs",
     jobTitle: "Lead Software Engineer",
     duties: [
       "Implement an asset custody and identity solution based on the Corda platform.",
-      "Develop the frontend and the backend."
+      "Develop the frontend and the backend.",
     ],
     tags: ["SpringBoot", "Kotlin", "Oracle", "React"],
     date: {
       start: "06/2019",
-      end: "12/2019"
-    }
+      end: "03/2020",
+    },
   },
   {
     company: "PR9",
@@ -22,13 +34,13 @@ const experiences = () => [
       "Build and lead a software team to create a high performance trading and payment system based on the Stellar blockchain.",
       "Drive agile development methodologies. Organising the Scrum ceremony.",
       "Continuously improve processes and practices of the software development lifecycle: testing, linting, continuous integration and deployment.",
-      "Provide technical guidance, support and coaching to engineers."
+      "Provide technical guidance, support and coaching to engineers.",
     ],
     tags: ["Node", "Graphql", "Postgres", "React", "Docker", "C++"],
     date: {
       start: "06/2018",
-      end: "03/2019"
-    }
+      end: "03/2019",
+    },
   },
   {
     company: "HCL Labs",
@@ -41,63 +53,63 @@ const experiences = () => [
       "Internationalisation, PDF report generation, D3 chart.",
       "End to end testing.",
       "Design and build a Proof Of Concept of a multi-asset trading and settlement platform based on the Stellar protocol: React, Node, SQL, C++",
-      "Prototyping a mobile retail trading application with Ionic/Cordova/Angular."
+      "Prototyping a mobile retail trading application with Ionic/Cordova/Angular.",
     ],
     tags: ["React", "Redux", "Node", "Java"],
     date: {
       start: "11/2015",
-      end: "06/2018"
-    }
+      end: "06/2018",
+    },
   },
   {
     company: "Finclusion Systems",
     jobTitle: "Blockchain engineer",
     duties: [
-      "Exploring blockchain technologies and smart contracts for financial institutions: Ripple, Stellar, Ethereum, Eris, Open assets."
+      "Exploring blockchain technologies and smart contracts for financial institutions: Ripple, Stellar, Ethereum, Eris, Open assets.",
     ],
     tags: ["Node", "Angular"],
     date: {
       start: "07/2015",
-      end: "10/2015"
-    }
+      end: "10/2015",
+    },
   },
   {
     company: "Orwell Group, UK",
     jobTitle: "Full Stack Software engineer",
     duties: [
-      "Defining specification and creating a minimum viable product for a real-time settlement and clearing system based on the Ripple protocol."
+      "Defining specification and creating a minimum viable product for a real-time settlement and clearing system based on the Ripple protocol.",
     ],
     tags: ["Product Definition", "Javascript"],
     date: {
       start: "01/2015",
-      end: "06/2015"
-    }
+      end: "06/2015",
+    },
   },
   {
     company: "Airbex.net",
     jobTitle: "CTO",
     duties: [
       "Airbex.net is a crypto-currency exchange, a web-based platform to buy and sell crypto-currencies such as Bitcoin and Litecoin.",
-      "Offers transparency by implementing a real-time proof of reserves which allow users to verify the assets and liabilities of the exchange."
+      "Offers transparency by implementing a real-time proof of reserves which allow users to verify the assets and liabilities of the exchange.",
     ],
     tags: ["Node", "Javascript", "Crypto currency"],
     date: {
       start: "04/2014",
-      end: "12/2014"
-    }
+      end: "12/2014",
+    },
   },
   {
     company: "Amadeus",
     jobTitle: "Software engineer",
     duties: [
       "Develop software projects in a massively distributed air travel reservation system.",
-      "Enhance and improve continuous development and overall software quality in an agile/lean environment."
+      "Enhance and improve continuous development and overall software quality in an agile/lean environment.",
     ],
     tags: ["C++", "CI/CD"],
     date: {
       start: "04/2012",
-      end: "03/2014"
-    }
+      end: "03/2014",
+    },
   },
   {
     company: "Telsey S.p.A",
@@ -107,27 +119,27 @@ const experiences = () => [
       "Managed the integration of Wimax and 3g USB dongle into ADSL and fibre access gateways.",
       "Developed an automated voice and fax call generator.",
       "Responsible for creating, developing and achieving high margin business for the company in the area of technological and service disruptions",
-      "Design, implementation, test and maintenance of home internet gateway software stack, from the device driver to the application level."
+      "Design, implementation, test and maintenance of home internet gateway software stack, from the device driver to the application level.",
     ],
     tags: ["C", "C++", "Java"],
     date: {
       start: "01/2003",
-      end: "09/2011"
-    }
+      end: "09/2011",
+    },
   },
   {
     company: "Netergy Microelectonics Ltd, UK",
     jobTitle: "Software engineer",
     duties: [
       "Design, implementation and validation of an embedded TCP/IP stack used in ADSL and fibre routers.",
-      "Create penetration testing tools to harden security."
+      "Create penetration testing tools to harden security.",
     ],
     tags: ["C", "Networking Stack", "Device Driver", "Voice over IP"],
     date: {
       start: "11/2000",
-      end: "11/2002"
-    }
-  }
+      end: "11/2002",
+    },
+  },
 ];
 
 const content = {
@@ -138,27 +150,34 @@ const content = {
     city: "London",
     email: "frederic.heem@gmail.com",
     jobTitle: "Lead Software Engineer",
-    github: "github.com/fredericheem"
+    github: "github.com/fredericheem",
   },
   summary:
     "Lead full stack software engineer focusing on delivering innovative products. Interested in frontend, backend and deployment.",
   languages: [
     { name: "English", level: "Fluent" },
     { name: "French", level: "Mother tongue" },
-    { name: "Italian", level: "Fluent" }
+    { name: "Italian", level: "Fluent" },
+    { name: "Portuguese", level: "Proficient" },
+    { name: "Spanish", level: "Intermediate" },
   ],
   educations: [
     {
       name: "Master of Industrial Engineering",
       description: faker.lorem.word(),
       issuer: "ENSAM Paris Tech",
-      endYear: "2000"
-    }
+      endYear: "2000",
+    },
   ],
   skills: [
     {
       category: "Frontend",
-      items: [{ name: "React" }, { name: "CSS" }, { name: "Typescript" }, { name: "D3" }]
+      items: [
+        { name: "React" },
+        { name: "Typescript" },
+        { name: "Javascript" },
+        { name: "CSS" },
+      ],
     },
     {
       category: "Backend",
@@ -166,23 +185,32 @@ const content = {
         { name: "Node" },
         { name: "Kotlin" },
         { name: "C++" },
-        { name: "Java" }
-      ]
+        { name: "Java" },
+      ],
     },
     {
       category: "Methodologies",
-      items: [{ name: "Agile" }, { name: "Lean" }, { name: "Scrum" }]
+      items: [{ name: "Agile" }, { name: "Lean" }, { name: "Scrum" }],
     },
     {
       category: "Databases",
-      items: [{ name: "Postgres" }, { name: "Oracle" }, { name: "Mysql" }]
+      items: [{ name: "Postgres" }, { name: "Oracle" }, { name: "Mysql" }],
     },
     {
       category: "DevOps",
-      items: [{ name: "Docker" }, { name: "Ansible" }, { name: "Chef" }]
-    }
+      items: [
+        { name: "Terraform" },
+        { name: "Docker" },
+        { name: "Ansible" },
+        { name: "Chef" },
+      ],
+    },
+    {
+      category: "Cloud",
+      items: [{ name: "AWS" }, { name: "Azure" }, { name: "Google Cloud" }],
+    },
   ],
-  experiences: experiences()
+  experiences: experiences(),
 };
 
 export default content;

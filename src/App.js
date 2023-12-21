@@ -268,10 +268,10 @@ const BasicInfo = ({ info }) => (
         <EmailSvg width="20" />
         <span>{info.email}</span>
       </div>
-      <div>
+      {/* <div>
         <LocationSvg width="20" />
         <span>{info.city}</span>
-      </div>
+      </div> */}
       {info.github && (
         <div>
           <GithubSvg height="20" width="20" />
